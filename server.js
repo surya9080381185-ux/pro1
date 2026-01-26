@@ -7,6 +7,7 @@ const { v4: uuidv4 } = require('uuid');
 const cors = require('cors');
 
 const app = express();
+app.set('trust proxy', true); // Add this line!
 const PORT = process.env.PORT || 3000;
 
 // Enable CORS
@@ -145,3 +146,4 @@ app.listen(PORT, () => {
     console.log(`- Local:   http://localhost:${PORT}`);
     console.log(`- Network: http://${getLocalIp()}:${PORT}`);
 });
+
